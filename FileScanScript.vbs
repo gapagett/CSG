@@ -1,5 +1,6 @@
 dim ErrorCountConfig
 dim ErrorFileLoc
+dim continue
 
 ErrorCountConfig = 3
 
@@ -16,4 +17,9 @@ if errorFileLoc = "" then
 	ErrorFileLoc = "C:\Logs"	
 end if
 
-msgbox ErrorFileLoc
+
+continue = msgbox "Are you sure you want to run the Scan with the following settings. " & vbcrlf & "Error Count: " & ErrorCountConfig & vbcrlf & "Error FIle Location: " & ErrorFileLoc & "?" , 4, "Confirmation"
+
+if continue = vbok then
+	msgbox "Continue"
+else
