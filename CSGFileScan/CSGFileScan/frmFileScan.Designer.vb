@@ -28,20 +28,21 @@ Partial Class frmFileScan
         Me.lblFileLoc = New System.Windows.Forms.Label()
         Me.btnRunScan = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnBrowse = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtErrorCount
         '
         Me.txtErrorCount.Location = New System.Drawing.Point(15, 35)
         Me.txtErrorCount.Name = "txtErrorCount"
-        Me.txtErrorCount.Size = New System.Drawing.Size(100, 20)
+        Me.txtErrorCount.Size = New System.Drawing.Size(224, 20)
         Me.txtErrorCount.TabIndex = 0
         '
         'txtFileLoc
         '
         Me.txtFileLoc.Location = New System.Drawing.Point(15, 81)
         Me.txtFileLoc.Name = "txtFileLoc"
-        Me.txtFileLoc.Size = New System.Drawing.Size(100, 20)
+        Me.txtFileLoc.Size = New System.Drawing.Size(224, 20)
         Me.txtFileLoc.TabIndex = 1
         '
         'lblErrorCount
@@ -64,7 +65,7 @@ Partial Class frmFileScan
         '
         'btnRunScan
         '
-        Me.btnRunScan.Location = New System.Drawing.Point(18, 127)
+        Me.btnRunScan.Location = New System.Drawing.Point(15, 143)
         Me.btnRunScan.Name = "btnRunScan"
         Me.btnRunScan.Size = New System.Drawing.Size(75, 23)
         Me.btnRunScan.TabIndex = 4
@@ -73,18 +74,28 @@ Partial Class frmFileScan
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(117, 126)
+        Me.btnCancel.Location = New System.Drawing.Point(108, 143)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 5
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'btnBrowse
+        '
+        Me.btnBrowse.Location = New System.Drawing.Point(18, 97)
+        Me.btnBrowse.Name = "btnBrowse"
+        Me.btnBrowse.Size = New System.Drawing.Size(101, 23)
+        Me.btnBrowse.TabIndex = 6
+        Me.btnBrowse.Text = "Browse for folder"
+        Me.btnBrowse.UseVisualStyleBackColor = True
+        '
         'frmFileScan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(265, 178)
+        Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnRunScan)
         Me.Controls.Add(Me.lblFileLoc)
@@ -103,5 +114,6 @@ Partial Class frmFileScan
     Friend WithEvents lblFileLoc As System.Windows.Forms.Label
     Friend WithEvents btnRunScan As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents btnBrowse As System.Windows.Forms.Button
 
 End Class
