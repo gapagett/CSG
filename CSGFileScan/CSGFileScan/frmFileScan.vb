@@ -23,9 +23,10 @@
 
 
     Private Sub btnRunScan_Click(sender As Object, e As EventArgs) Handles btnRunScan.Click
-        If Me.txtErrorCount.Text < 0 Or Me.txtErrorCount.Text > 9 Then
+        If Me.txtErrorCount.Text < 0 Or Me.txtErrorCount.Text > 9 Or Not IsNumeric(Me.txtErrorCount.Text) Then
             MsgBox("Error Count must be between 1 and 9, please reenter.")
         Else
+            Call ScanLogFile(CInt(Me.txtErrorCount.Text), Me.txtFileLoc.Text)
             Call SendEmail()
         End If
     End Sub
