@@ -50,18 +50,18 @@ Partial Class frmFileScan
         Me.lblErrorCount.AutoSize = True
         Me.lblErrorCount.Location = New System.Drawing.Point(12, 19)
         Me.lblErrorCount.Name = "lblErrorCount"
-        Me.lblErrorCount.Size = New System.Drawing.Size(227, 13)
+        Me.lblErrorCount.Size = New System.Drawing.Size(175, 13)
         Me.lblErrorCount.TabIndex = 2
-        Me.lblErrorCount.Text = "Number of Errors before email sent? (Default 3)"
+        Me.lblErrorCount.Text = "Number of Errors before email sent?"
         '
         'lblFileLoc
         '
         Me.lblFileLoc.AutoSize = True
         Me.lblFileLoc.Location = New System.Drawing.Point(15, 62)
         Me.lblFileLoc.Name = "lblFileLoc"
-        Me.lblFileLoc.Size = New System.Drawing.Size(157, 13)
+        Me.lblFileLoc.Size = New System.Drawing.Size(76, 13)
         Me.lblFileLoc.TabIndex = 3
-        Me.lblFileLoc.Text = "File Location? (Default C:\Logs)"
+        Me.lblFileLoc.Text = "File Location? "
         '
         'btnRunScan
         '

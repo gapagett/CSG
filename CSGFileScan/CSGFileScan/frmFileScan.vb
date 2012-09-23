@@ -2,15 +2,19 @@
 
     Private Sub frmFileScan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'default values for file scan
-        Me.txtErrorCount.Text = 3
-        Me.txtFileLoc.Text = "C:\Logs"
+        Me.txtErrorCount.Text = 5
+        Me.txtFileLoc.Text = "C:\Logs\ErrorLog.txt"
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-        Dim FolderDialog As New FolderBrowserDialog
+        Dim FileDialog As New OpenFileDialog
         'opens the folder dialog in order to allowe user to select the folder which contains the error log
-        FolderDialog.ShowDialog()
-        txtFileLoc.Text = FolderDialog.SelectedPath
+        FileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+        FileDialog.InitialDirectory = "C:\"
+        FileDialog.FilterIndex = 2
+        FileDialog.RestoreDirectory = True
+        FileDialog.ShowDialog()
+        txtFileLoc.Text = FileDialog.FileName
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -19,6 +23,10 @@
 
 
     Private Sub btnRunScan_Click(sender As Object, e As EventArgs) Handles btnRunScan.Click
-        Call SendEmail()
+        If Me.txtErrorCount.Text < 0 Or Me.txtErrorCount.Text > 9 Then
+            MsgBox("Error Count must be between 1 and 9, please reenter.")
+        Else
+            Call SendEmail()
+        End If
     End Sub
 End Class

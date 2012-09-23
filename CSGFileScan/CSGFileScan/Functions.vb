@@ -10,7 +10,6 @@ Module Functions
             Server.EnableSsl = True
             Server.Port = 587
             Server.Host = "smtp.gmail.com"
-
             NewMessage = New MailMessage
             NewMessage.From = New MailAddress("casperpage@gmail.com")
             NewMessage.To.Add("gapagett@cox.net")
