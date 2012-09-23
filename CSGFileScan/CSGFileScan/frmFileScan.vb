@@ -18,4 +18,7 @@
     End Sub
 
 
+    Private Sub btnRunScan_Click(sender As Object, e As EventArgs) Handles btnRunScan.Click
+        Call SendEmail()
+    End Sub
 End Class
