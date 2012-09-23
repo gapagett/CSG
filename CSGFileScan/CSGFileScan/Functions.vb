@@ -5,7 +5,7 @@ Module Functions
     Function ScanLogFile(ErrorCount As Integer, FileLocation As String)
         Dim iMinutes As Integer
         Dim Reader As StreamReader = New StreamReader(FileLocation)
-        Dim temparray As String()
+        Dim tempArray As String()
         Dim i As Integer
 
         Dim Time As String()
@@ -35,7 +35,6 @@ Module Functions
         'creates the final array based on the number of insertions done to the above. we subtract one because it adds one extraneous count. 
         Dim FinalArray(ArrayLocation - 1, 3)
         'combines the 4 arrays into one array for faster processing.
-        i = 0
         For i = 0 To (ArrayLocation - 1)
             FinalArray(i, 0) = Time(i)
             FinalArray(i, 1) = Key1(i)
@@ -49,12 +48,12 @@ Module Functions
 
 
     End Function
-    Function SendEmail()
+    Sub SendEmail(UserName As String, Password As String)
         Try
             Dim Server As New SmtpClient
             Dim NewMessage As New MailMessage
             'set the server credentials
-            Server.Credentials = New Net.NetworkCredential(InputBox("Enter GMail Login"), InputBox("Enter GMail Password (will not be saved)"))
+            Server.Credentials = New Net.NetworkCredential(UserName, Password)
             'required in order to create a secure SSL. must set gmail to "Don't always use https"
             Server.EnableSsl = True
             Server.Port = 587
@@ -70,5 +69,5 @@ Module Functions
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
-    End Function
+    End Sub
 End Module

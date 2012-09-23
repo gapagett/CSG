@@ -27,7 +27,8 @@
             MsgBox("Error Count must be between 1 and 9, please reenter.")
         Else
             Call ScanLogFile(CInt(Me.txtErrorCount.Text), Me.txtFileLoc.Text)
-            Call SendEmail()
+            Call SendEmail(Me.txtGmailLogin.Text, Me.txtPassword.Text)
         End If
     End Sub
+
 End Class

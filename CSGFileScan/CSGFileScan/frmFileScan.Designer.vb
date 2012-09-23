@@ -29,6 +29,10 @@ Partial Class frmFileScan
         Me.btnRunScan = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnBrowse = New System.Windows.Forms.Button()
+        Me.txtGmailLogin = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'txtErrorCount
@@ -65,7 +69,7 @@ Partial Class frmFileScan
         '
         'btnRunScan
         '
-        Me.btnRunScan.Location = New System.Drawing.Point(15, 143)
+        Me.btnRunScan.Location = New System.Drawing.Point(19, 238)
         Me.btnRunScan.Name = "btnRunScan"
         Me.btnRunScan.Size = New System.Drawing.Size(75, 23)
         Me.btnRunScan.TabIndex = 4
@@ -74,7 +78,7 @@ Partial Class frmFileScan
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(108, 143)
+        Me.btnCancel.Location = New System.Drawing.Point(112, 238)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 5
@@ -90,11 +94,48 @@ Partial Class frmFileScan
         Me.btnBrowse.Text = "Browse for folder"
         Me.btnBrowse.UseVisualStyleBackColor = True
         '
+        'txtGmailLogin
+        '
+        Me.txtGmailLogin.Location = New System.Drawing.Point(15, 142)
+        Me.txtGmailLogin.Name = "txtGmailLogin"
+        Me.txtGmailLogin.Size = New System.Drawing.Size(100, 20)
+        Me.txtGmailLogin.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 128)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(180, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Gmail Login? (required to send email)"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(18, 170)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(176, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Gmail Password? (will not be saved)"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(15, 196)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.TabIndex = 10
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
         'frmFileScan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(265, 178)
+        Me.ClientSize = New System.Drawing.Size(265, 296)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtGmailLogin)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnRunScan)
@@ -115,5 +156,9 @@ Partial Class frmFileScan
     Friend WithEvents btnRunScan As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnBrowse As System.Windows.Forms.Button
+    Friend WithEvents txtGmailLogin As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
 
 End Class
