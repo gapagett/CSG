@@ -25,7 +25,10 @@
     Private Sub btnRunScan_Click(sender As Object, e As EventArgs) Handles btnRunScan.Click
         If Me.txtErrorCount.Text < 0 Or Me.txtErrorCount.Text > 9 Or Not IsNumeric(Me.txtErrorCount.Text) Then
             MsgBox("Error Count must be between 1 and 9, please reenter.")
+        ElseIf Me.txtGmailLogin.Text = "" Or Me.txtPassword.Text = "" Then
+            MsgBox("Must enter Gmail Login and Password.")
         Else
+
             Call ScanLogFile(CInt(Me.txtErrorCount.Text), Me.txtFileLoc.Text)
             Call SendEmail(Me.txtGmailLogin.Text, Me.txtPassword.Text)
         End If

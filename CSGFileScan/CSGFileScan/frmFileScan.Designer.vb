@@ -52,6 +52,7 @@ Partial Class frmFileScan
         'lblErrorCount
         '
         Me.lblErrorCount.AutoSize = True
+        Me.lblErrorCount.Enabled = False
         Me.lblErrorCount.Location = New System.Drawing.Point(12, 19)
         Me.lblErrorCount.Name = "lblErrorCount"
         Me.lblErrorCount.Size = New System.Drawing.Size(175, 13)
@@ -61,6 +62,7 @@ Partial Class frmFileScan
         'lblFileLoc
         '
         Me.lblFileLoc.AutoSize = True
+        Me.lblFileLoc.Enabled = False
         Me.lblFileLoc.Location = New System.Drawing.Point(15, 62)
         Me.lblFileLoc.Name = "lblFileLoc"
         Me.lblFileLoc.Size = New System.Drawing.Size(76, 13)
@@ -99,11 +101,12 @@ Partial Class frmFileScan
         Me.txtGmailLogin.Location = New System.Drawing.Point(15, 142)
         Me.txtGmailLogin.Name = "txtGmailLogin"
         Me.txtGmailLogin.Size = New System.Drawing.Size(100, 20)
-        Me.txtGmailLogin.TabIndex = 7
+        Me.txtGmailLogin.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Enabled = False
         Me.Label1.Location = New System.Drawing.Point(15, 128)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(180, 13)
@@ -113,6 +116,7 @@ Partial Class frmFileScan
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Enabled = False
         Me.Label2.Location = New System.Drawing.Point(18, 170)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(176, 13)
@@ -124,7 +128,7 @@ Partial Class frmFileScan
         Me.txtPassword.Location = New System.Drawing.Point(15, 196)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 10
+        Me.txtPassword.TabIndex = 3
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'frmFileScan

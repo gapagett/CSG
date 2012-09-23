@@ -4,16 +4,19 @@ Imports System.IO
 Module Functions
     Function ScanLogFile(ErrorCount As Integer, FileLocation As String)
         Dim iMinutes As Integer
-        Dim Reader As StreamReader = New StreamReader(FileLocation)
-        Dim tempArray As String()
         Dim i As Integer
+        Dim ArrayLocation As Integer = 0
 
+        Dim Reader As StreamReader = New StreamReader(FileLocation)
+
+        Dim tempArray As String()
         Dim Time As String()
         Dim Key1 As String()
         Dim Key2 As String()
         Dim Description As String()
 
-        Dim ArrayLocation As Integer = 0
+        'number of minutes between errors
+        iMinutes = 5
 
         Do While Reader.Peek <> -1
             'makes each of the arrays one large to hold more data
@@ -32,18 +35,22 @@ Module Functions
             'adds one more to location counter to allow for the addition, if needed, of rows to the arrays
             ArrayLocation += 1
         Loop
+
         'creates the final array based on the number of insertions done to the above. we subtract one because it adds one extraneous count. 
         Dim FinalArray(ArrayLocation - 1, 3)
         'combines the 4 arrays into one array for faster processing.
         For i = 0 To (ArrayLocation - 1)
-            FinalArray(i, 0) = Time(i)
+            FinalArray(i, 0) = CDate(Time(i))
             FinalArray(i, 1) = Key1(i)
             FinalArray(i, 2) = Key2(i)
             FinalArray(i, 3) = Description(i)
         Next i
 
-        'number of minutes between errors
-        iMinutes = 5
+        Dim sortArray = (From Final In FinalArray _
+                        Order By Final(1), Final(2), Final(0) _
+                        Where Final(0) >= Final(0) And Final(0) <= DateAdd(DateInterval.Minute, 5, CDate(Final(0))) _
+                        Select Final)
+
 
 
 
