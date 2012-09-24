@@ -26,7 +26,7 @@
     <ProductName>CSG Log File Scan</ProductName>
     <PublisherName>Greg Pagett</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

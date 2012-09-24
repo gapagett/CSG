@@ -94,7 +94,7 @@ Module Functions
             Server.Host = "smtp.gmail.com"
             NewMessage = New MailMessage
             NewMessage.From = New MailAddress("casperpage@gmail.com")
-            NewMessage.To.Add("gapagett@cox.net")
+            NewMessage.To.Add("csg.development@gmail.com")
             NewMessage.Subject = "CSG FileScan Errors - Greg Pagett"
             NewMessage.Body = EmailBody
             NewMessage.Priority = MailPriority.High
