@@ -1,5 +1,7 @@
 ﻿Public Class frmFileScan
 
+    Private Property ErrorsArray As Object
+
     Private Sub frmFileScan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'default values for file scan
         Me.txtErrorCount.Text = 5
@@ -23,14 +25,15 @@
 
 
     Private Sub btnRunScan_Click(sender As Object, e As EventArgs) Handles btnRunScan.Click
+        'Dim FindSendErrors As String
+        Dim errors As String
         If Me.txtErrorCount.Text < 0 Or Me.txtErrorCount.Text > 9 Or Not IsNumeric(Me.txtErrorCount.Text) Then
             MsgBox("Error Count must be between 1 and 9, please reenter.")
         ElseIf Me.txtGmailLogin.Text = "" Or Me.txtPassword.Text = "" Then
             MsgBox("Must enter Gmail Login and Password.")
         Else
-
-            Call ScanLogFile(CInt(Me.txtErrorCount.Text), Me.txtFileLoc.Text)
-            Call SendEmail(Me.txtGmailLogin.Text, Me.txtPassword.Text)
+            errors = ScanLogFile(CInt(Me.txtErrorCount.Text), Me.txtFileLoc.Text)
+            Call SendEmail(Me.txtGmailLogin.Text, Me.txtPassword.Text, errors)
         End If
     End Sub
 
